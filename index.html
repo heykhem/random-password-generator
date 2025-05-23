@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PassWord Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="passdisplay">
+        <p class="pass-dis-input"></p>
+        <button class="pass-generate-btn">Copy</button>
+        <div class="range-grp">
+          <div class="range-label-grp">
+            <label for="range" class="display-range"></label>
+            <input
+              type="range"
+              name=""
+              id="range"
+              value="12"
+              title="range"
+              min="6"
+              max="50"
+            />
+          </div>
+          <button id="new-pass-gen">Generate</button>
+        </div>
+      </div>
+
+      <form action="">
+        <div class="label-grp">
+          <label for="capitalLet" class="custom-label">
+            <input
+              type="checkbox"
+              name=""
+              id="capitalLet"
+              checked
+              class="check-checking"
+            />
+            Capital Letters <span class="capital-letter">A-Z</span></label
+          >
+        </div>
+        <div class="label-grp">
+          <label for="smallLet" class="custom-label">
+            <input
+              type="checkbox"
+              name=""
+              id="smallLet"
+              checked
+              class="check-checking"
+            />
+            Small Letters <span class="small-letter">a-z</span></label
+          >
+        </div>
+        <div class="label-grp">
+          <label for="numLet" class="custom-label">
+            <input
+              type="checkbox"
+              name=""
+              id="numLet"
+              checked
+              class="check-checking"
+            />
+            Number <span class="password-number">0-9</span></label
+          >
+        </div>
+        <div class="label-grp">
+          <label for="symbolLet" class="custom-label">
+            <input
+              type="checkbox"
+              name=""
+              id="symbolLet"
+              checked
+              class="check-checking"
+            />
+            Symbols <span class="password-symbols">#@&</span></label
+          >
+        </div>
+      </form>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="script.js"></script>
+    <!-- <script src="index.js"></script> -->
+  </body>
+</html>
