@@ -3,91 +3,153 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PassWord Generator</title>
+    <title>Shakey Password Generator</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- GOOGLE ICONS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="wrapper">
-      <div class="passdisplay">
-        <p class="pass-dis-input"></p>
-        <button class="pass-generate-btn">Copy</button>
-        <div class="range-grp">
-          <div class="range-label-grp">
-            <label for="range" class="display-range"></label>
-            <input
-              type="range"
-              name=""
-              id="range"
-              value="12"
-              title="range"
-              min="6"
-              max="50"
-            />
+    <!-- NAVIGATION BAR -->
+    <section class="navbar">
+      <div class="container">
+        <nav>
+          <div class="logobox">
+            <a href="/"><span>SHAKEY</span></a>
           </div>
-          <button id="new-pass-gen">Generate</button>
+          <div class="links-box">
+            <ul>
+              <!-- <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li> -->
+            </ul>
+          </div>
+          <div class="buttons-box">
+            <div class="mode-change">
+              <span class="mode-change-indicator hidden">Light</span>
+              <button class="light-mode mode-btn hidden">
+                <span class="material-symbols-outlined mail-icon"
+                  >light_mode
+                </span>
+              </button>
+              <span class="mode-change-indicator">Dark</span>
+              <button class="dark-mode mode-btn">
+                <span class="material-symbols-outlined mail-icon"
+                  >dark_mode
+                </span>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <section class="main-section">
+      <div class="wrapper">
+        <div class="wrapper-inside">
+          <div class="passdisplay">
+            <div class="password-fields">
+              <div class="pass-display-input"></div>
+              <button
+                class="pass-generate-btn"
+                data-tooltip="Copy to clipboard"
+              >
+                Copy
+                <span class="material-symbols-outlined"> content_copy </span>
+              </button>
+            </div>
+
+            <div class="range-label-grp">
+              <div class="range-length">
+                Length
+                <label for="range" class="display-range"></label>
+              </div>
+              <input
+                type="range"
+                name=""
+                id="range"
+                value="12"
+                title="range"
+                min="6"
+                max="50"
+              />
+            </div>
+          </div>
+
+          <form action="">
+            <div class="form-wrapper">
+              <div class="label-grp">
+                <label for="capitalLet" class="custom-label">
+                  <input
+                    type="checkbox"
+                    name=""
+                    id="capitalLet"
+                    checked
+                    class="check-checking"
+                  />
+                  <span class="capital-letter">Capital Letters</span></label
+                >
+              </div>
+              <div class="label-grp">
+                <label for="smallLet" class="custom-label">
+                  <input
+                    type="checkbox"
+                    name=""
+                    id="smallLet"
+                    checked
+                    class="check-checking"
+                  />
+                  <span class="small-letter">Small Letters</span></label
+                >
+              </div>
+              <div class="label-grp">
+                <label for="numLet" class="custom-label">
+                  <input
+                    type="checkbox"
+                    name=""
+                    id="numLet"
+                    checked
+                    class="check-checking"
+                  />
+                  <span class="password-number">Number</span></label
+                >
+              </div>
+              <div class="label-grp">
+                <label for="symbolLet" class="custom-label">
+                  <input
+                    type="checkbox"
+                    name=""
+                    id="symbolLet"
+                    checked
+                    class="check-checking"
+                  />
+                  <span class="password-symbols">Symbols</span></label
+                >
+              </div>
+            </div>
+            <button id="new-pass-gen">Generate</button>
+          </form>
         </div>
       </div>
-
-      <form action="">
-        <div class="label-grp">
-          <label for="capitalLet" class="custom-label">
-            <input
-              type="checkbox"
-              name=""
-              id="capitalLet"
-              checked
-              class="check-checking"
-            />
-            Capital Letters <span class="capital-letter">A-Z</span></label
-          >
+      <div class="password-history">
+        <div class="password-container">
+          <div class="password-history-info">
+            <h2>History</h2>
+            <button class="clear-history-btn">
+              Clear History
+              <span class="material-symbols-outlined"> delete </span>
+            </button>
+          </div>
+          <div class="password-list-box"></div>
         </div>
-        <div class="label-grp">
-          <label for="smallLet" class="custom-label">
-            <input
-              type="checkbox"
-              name=""
-              id="smallLet"
-              checked
-              class="check-checking"
-            />
-            Small Letters <span class="small-letter">a-z</span></label
-          >
-        </div>
-        <div class="label-grp">
-          <label for="numLet" class="custom-label">
-            <input
-              type="checkbox"
-              name=""
-              id="numLet"
-              checked
-              class="check-checking"
-            />
-            Number <span class="password-number">0-9</span></label
-          >
-        </div>
-        <div class="label-grp">
-          <label for="symbolLet" class="custom-label">
-            <input
-              type="checkbox"
-              name=""
-              id="symbolLet"
-              checked
-              class="check-checking"
-            />
-            Symbols <span class="password-symbols">#@&</span></label
-          >
-        </div>
-      </form>
-    </div>
-
+      </div>
+    </section>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
       integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-
     <script src="script.js"></script>
-    <!-- <script src="index.js"></script> -->
   </body>
 </html>
